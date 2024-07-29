@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assuming Dockerfile in the current directory
+    volumes:
+      - .:/app
+    ports:  # Optional, map container port to host port (if applicable)
+      - "8000:8000"
+    environment:  # Optional, define environment variables (if needed)
+      - MY_VAR=some_value
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test  # Assuming a separate test Dockerfile
+    volumes:
+      - .:/app
+    command: ["pytest", "test_analyze_orders.py"]
