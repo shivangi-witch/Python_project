@@ -1,0 +1,12 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY analyze_orders.py analyze_orders.py
+COPY test_analyze_orders.py test_analyze_orders.py
+
+CMD ["pytest", "test_analyze_orders.py"]
+
