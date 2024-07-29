@@ -1,0 +1,19 @@
+# Build stage with dependencies
+FROM python:3.9-slim AS builder
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install pandas pytest
+
+# Final stage with minimal image
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/ .
+
+# Run tests
+CMD ["pytest", "test_analyze_orders.py"]
+
