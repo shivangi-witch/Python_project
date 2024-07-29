@@ -1,0 +1,6 @@
+docker build [OPTIONS] PATH | URL
+docker build -t my-image:latest .
+docker build --no-cache -t my-app -f Dockerfile.prod .
+docker build https://github.com/shivangi-witch
+ 
+
