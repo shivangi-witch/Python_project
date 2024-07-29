@@ -1,0 +1,26 @@
+runnign the tests 
+Build and run the test container:
+
+docker-compose up --build test
+The tests will run and display the results.
+
+
+Step 6: Committing the Changes
+
+  
+Add the files to the repository:
+
+git add .
+Commit the changes:
+
+
+
+Step 7: Running the Application and Tests
+Running the Application:
+
+
+docker-compose up --build app
+Running the Tests:
+
+
+docker-compose up --build test
